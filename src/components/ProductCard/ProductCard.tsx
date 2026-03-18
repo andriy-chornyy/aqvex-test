@@ -1,5 +1,7 @@
 import './ProductCard.scss';
 import type { Product } from '../../types/product';
+import statusOk from '/icons/status.svg';
+import statusZero from '/icons/status-zero.svg';
 
 interface ProductCardProps {
   product: Product;
