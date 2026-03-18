@@ -22,8 +22,8 @@ export const Footer = () => {
         <div className="footer-payments">
           <img className="master-card img" src="icons/master-card.svg" alt="Mastercard" />
           <img className="visa img" src="icons/visa.svg" alt="Visa" />
-          <img className="iPay img" src="icons/iPay.svg" alt="Apple Pay" />
-          <img className="gPay img" src="icons/gPay.svg" alt="Google Pay" />
+          <img className="iPay img" src="icons/i-pay.svg" alt="Apple Pay" />
+          <img className="gPay img" src="icons/g-pay.svg" alt="Google Pay" />
         </div>
       </div>
     </footer>

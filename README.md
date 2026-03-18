@@ -1,4 +1,4 @@
-<h1 align="center">💎 Womapp — task 💎</h1>
+<!-- <h1 align="center">💎 Womapp — task 💎</h1>
 
 ## 📄 About the project
 - Fully responsive layout for Desktop, Tablet, and Mobile (>320px)
@@ -37,4 +37,4 @@ npm install
 ```
 npm start
 ```
-5. Open http://localhost:5173 in your browser to view the page.
+5. Open http://localhost:5173 in your browser to view the page. -->

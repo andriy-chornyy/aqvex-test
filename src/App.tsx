@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { fetchProducts } from "./api/products";
 import type { Product } from "./types/product";
 import { Header } from "./components/Header";
@@ -13,8 +13,16 @@ import { useSortedProducts } from "./hooks/useSortedProducts";
 export const App = () => {
   const [products, setProducts] = useState<Product[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<string | null>(null);
+  const [searchQuery, setSearchQuery] = useState("");
 
-  const { sortedProducts, setSortType } = useSortedProducts(products);
+  const filteredProducts = useMemo(() => {
+    return products.filter((product) =>
+      product.name.toLowerCase().includes(searchQuery.toLowerCase())
+    );
+  }, [products, searchQuery]);
+
+  const { sortedProducts, setSortType } = useSortedProducts(filteredProducts);
 
   const { visibleItems, totalPages, currentPage, setCurrentPage } = 
     usePagination(sortedProducts, 12);
@@ -24,16 +32,13 @@ export const App = () => {
       try {
         const data: Product[] = await fetchProducts();
         
-        console.log("Данные в App:", data);
-
         if (Array.isArray(data)) {
           setProducts(data);
         } else {
-          console.error("Ожидался массив товаров, но пришло:", data);
+          setError("Ошибка формата данных товаров");
         }
-
-      } catch (error) {
-        console.error("He удалось загрузить товары:", error);
+      } catch {
+        setError("Не удалось загрузить товары");
       } finally {
         setIsLoading(false);
       }
@@ -48,15 +53,23 @@ export const App = () => {
   };
 
   if (isLoading) {
-    return <div className="loading">Загрузка товаров...</div>;
+    return (
+      <div className="loader-container">
+        <span className="loader-text">Загрузка товаров...</span>
+      </div>
+    );
+  }
+
+  if (error) {
+    return <div className="error">{error}</div>;
   }
 
   return (
-    <div className="container">
+    <div className="App">
       <Header />
 
       <main>
-        <Search />
+        <Search onSearch={ setSearchQuery}/>
 
         <CatalogToolbar 
           totalCount={products.length} 

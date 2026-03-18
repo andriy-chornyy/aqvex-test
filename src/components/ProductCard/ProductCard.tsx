@@ -12,11 +12,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
   const rating = `${product.rating}`;
   const isAvailable = product.in_stock;
 
-  const volumeOptions = product.volumes.map((volume) => (
-    <option key={volume.id} value={volume.id}>
-      {volume.label}
-    </option>
-  ));
+  const hasMultipleVolumes = product.volumes && product.volumes.length > 1;
 
   return (
     <div className="product-card">
@@ -28,7 +24,7 @@ export const ProductCard = ({ product }: ProductCardProps) => {
         />
       </div>
 
-      <div className='info-container'>
+      <div className="info-container">
         <div className="price-container">
           <div className="price old-price">
             {oldPrice}
@@ -45,14 +41,13 @@ export const ProductCard = ({ product }: ProductCardProps) => {
           </div>
         </div>
 
-        <div className='info-rating-info'>
-          <p className='info-text'>
+        <div className="info-rating-info">
+          <p className="info-text">
             {infoText}
           </p>
 
-          <div className='stars-rating-box'>
-            
-            <div className='stars-box'>
+          <div className="stars-rating-box">
+            <div className="stars-box">
               {[...Array(5)].map((_, index) => (
                 <img 
                   key={index} 
@@ -61,48 +56,52 @@ export const ProductCard = ({ product }: ProductCardProps) => {
                   className="star-icon" 
                 />
               ))}
-
             </div>
-
-            <p className='rating-text'>
+            <p className="rating-text">
               {rating}
             </p>
           </div>
         </div>
 
-        <div className='status-category-container'>
-          <div className='status-box'>
-            <img className='status-icon'
-            src={isAvailable ? "icons/status.svg" : "/icons/status-zero.svg"} 
-            alt={isAvailable ? "B наличии" : "Нет в наличии"} 
-          />
-            <p className='status-text'> 
-              {isAvailable ? "B наличии" : "Нет в наличии"}
+        <div className="status-category-container">
+          <div className="status-box">
+            <img 
+              className="status-icon"
+              src={isAvailable ? "icons/status.svg" : "icons/status-zero.svg"} 
+              alt={isAvailable ? "В наличии" : "Нет в наличии"} 
+            />
+            <p className="status-text"> 
+              {isAvailable ? "В наличии" : "Нет в наличии"}
             </p>
-            
           </div>
 
-          <div className='category-icon'>
-            <img src="icons/category-icon.svg" alt="category-icon" />
+          <div className="category-icon">
+            <img src="icons/category-icon.svg" alt="category" />
           </div>
 
-          <div className='category-box'>
+          <div className="category-box">
             <p>{product.category}</p>
           </div>
         </div>
 
         <div className="product-actions">
-          <div className="select-wrapper">
-            <select 
-              className="action-select" 
-              defaultValue={product.selected_volume_id}
-              onChange={(e) => console.log("Выбран ID объема:", e.target.value)}
-            >
-              {volumeOptions}
-            </select>
-          </div>
+          {hasMultipleVolumes && (
+            <div className="select-wrapper">
+              <select 
+                className="action-select" 
+                defaultValue={product.selected_volume_id}
+                onChange={(e) => console.log("Выбран ID:", e.target.value)}
+              >
+                {product.volumes.map((volume) => (
+                  <option key={volume.id} value={volume.id}>
+                    {volume.label}
+                  </option>
+                ))}
+              </select>
+            </div>
+          )}
 
-          <button className="add-to-cart">
+          <button className={`add-to-cart ${!hasMultipleVolumes ? 'add-to-cart--full' : ''}`}>
             <img src="icons/shopping-cart.svg" alt="" className="cart-icon-img" /> 
             <span className="add-to-cart-text">В корзину</span>
           </button>
