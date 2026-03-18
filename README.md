@@ -15,11 +15,11 @@
 ## Installation / How to run
 1. Clone the repository:
 ```
-git clone https://github.com/andriy-chornyy/Womapp-test-task.git
+git clone https://github.com/andriy-chornyy/aqvex-test
 ```
 2. Navigate to the project folder:
 ```
-cd Womapp-test-task
+cd aqvex-test
 ```
 3. Install dependencies:
 ```
