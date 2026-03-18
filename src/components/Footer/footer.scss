@@ -1,0 +1,89 @@
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding: 19px 0;
+  border-top: 1px solid #E8F4FF;
+  box-sizing: border-box;
+  
+
+  .footer-container {
+    width: 1450px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .footer-left {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .footer-logos {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+
+      .logo-aqvex {
+        width: 40px;
+        height: 40px;
+      }
+
+      .zrobleno-ua {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 58px;
+        height: 40px;
+        background-color: #F1F2F4;
+        border-radius: 12px;
+      }
+    }
+
+    .footer-copyright {
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 140%;
+      letter-spacing: -2%;
+      color: #9096A2;
+      white-space: nowrap;
+    }
+  }
+
+  .footer-payments {
+    display: flex;
+    align-items: center;
+    gap: 22px;
+
+    .master-card {
+      width: 77px;
+      height: 34px;
+    }
+
+    .visa {
+      width: 69px;
+      height: 34px;
+    }
+
+    .iPay {
+      width: 62px;
+      height: 34px;
+    }
+
+    .gPay {
+      width: 64px;
+      height: 34px;
+    }
+  }
+
+  .img {
+    cursor: pointer;
+    transition: transform 0.2s ease-in-out;
+    
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}

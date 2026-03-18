@@ -1,8 +1,8 @@
 {
-  "name": "womapp",
+  "name": "aqvex-test",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://andriy-chornyy.github.io/Womapp-test-task",
+  "homepage": "https://andriy-chornyy.github.io/aqvex-test",
   "type": "module",
   "scripts": {
     "start": "vite --host --open",
@@ -14,12 +14,13 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "axios": "^1.13.6",
+    "lucide-react": "^0.577.0",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",
-    "@svgr/webpack": "^8.1.0",
     "@types/node": "^24.10.1",
     "@types/react": "^19.2.7",
     "@types/react-dom": "^19.2.3",

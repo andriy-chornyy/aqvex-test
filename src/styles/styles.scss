@@ -1,0 +1,25 @@
+@import "../assets/fonts/fonts"; 
+@import "./reset"; 
+
+body {
+  font-family: 'Klein', sans-serif;
+  background-color: #ffffff;
+  color: #000000;
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page__body {
+  width: 100%;
+  margin: auto;
+  height: 100%;
+}
+
+main {
+  width: 1450px;
+  margin: 0 auto 67px;
+}

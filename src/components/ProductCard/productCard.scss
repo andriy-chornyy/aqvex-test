@@ -1,0 +1,269 @@
+.product-card {
+  display: flex;
+  flex-direction: column;
+  gap: 18.5px;
+
+  width: 347px;
+  height: 657px;
+
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+  border-radius: 20px;
+
+  .info-container {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+
+    .price-container {
+      display: flex;
+      gap: 8px;
+      height: 22px;
+
+      font-weight: 500;
+
+      .price {
+        font-size: 22px;
+        line-height: 100%;
+      }
+
+      .old-price{
+        position: relative;
+        color: #8090A4;
+
+        &::after {
+          content: "";
+          position: absolute;
+          left: 0px;
+          top: 10.5px;
+          width: 39px;
+          height: 2px;
+          background-color: #FF2741;
+        }
+      }
+
+      .new-price {
+        background: linear-gradient(to right, #003181, #2288ED);
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        display: inline-block;
+      }
+
+      .badge {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 44px;
+
+        .discount-badge {
+          position: relative;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          
+          width: 32px;
+          height: 18px; 
+          padding: 2px;
+          
+          background-color: #FF2741;
+          color: white;
+          font-size: 14px;
+          font-weight: bold;
+          
+          margin-left: 8px;
+          margin-right: 3px;
+
+          &::before {
+            content: "";
+            position: absolute;
+            right: 100%;
+            top: 0;
+            width: 9px; 
+            height: 100%;
+            background: url('/icons/discount-before.svg') no-repeat center right;
+            background-size: contain;
+          }
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 100%;
+            top: 0;
+            width: 3px; 
+            height: 100%;
+            background: url('/icons/discount-after.svg') no-repeat center left;
+            background-size: contain;
+          }
+        }
+      }
+    }
+
+    .info-rating-info {
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      height: 105px;
+
+      .info-text {
+        height: 100%;
+        font-size: 18px;
+        line-height: 140%;
+        color: #182A42;
+        letter-spacing: -2%;
+      }
+
+      .stars-rating-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .stars-box {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          gap: 2px;
+          width: 68px;
+          height: 14px;
+          display: flex;
+          gap: 4px;
+
+          .star-icon {
+            width: 11px;
+            height: 11px;
+          }
+        }
+
+        .rating-text{
+          position: relative;
+          font-size: 14px;
+          line-height: 140%;
+          color: #182A42;
+
+          &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -2px;
+            width: 100%;
+            height: 1px;
+            background-color: #CFD8DC; 
+          }
+        }
+      }
+    }
+
+    .status-category-container {
+      display: flex;
+      height: 18px;
+      gap: 14px;
+      
+      .status-box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+
+        .status-icon {
+          width: 16px;
+          height: 16px;
+        }
+        
+        .status-text {
+          font-size: 14px;
+          font-weight: 400;
+        }
+      }
+
+      .category-icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .category-box {
+        font-size: 14px;
+        font-weight: 400;
+        color: #8090A4;
+      }
+    }
+
+    .product-actions {
+      display: flex;
+      gap: 8px;
+
+      .select-wrapper {
+        width: 123px;
+        height: 50px;
+
+        .action-select {
+          width: 100%;
+          height: 100%;
+          border: 2px solid #EBEBEB;
+          border-radius: 15px;
+          font-size: 18px;
+          font-weight: 500;
+          color: #182A42;
+
+          appearance: none;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+
+          padding: 0 20px; 
+
+          background-image: url("/icons/arrow-down.svg");
+          background-repeat: no-repeat;
+
+          background-position: right 20px center; 
+          background-size: 10px;
+          
+          cursor: pointer;
+          outline: none;
+        }
+      }
+
+      .add-to-cart {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        width: 173px;
+        height: 50px;
+        background-color: #E8F4FF;
+        border-radius: 15px;
+        border: none;
+        cursor: pointer;
+        opacity: 1;
+        gap: 12px;
+
+        padding: 12px 26px;
+        transition: background-color 0.2s ease;
+
+        .add-to-cart-text {
+          font-family: 'Klein', sans-serif;
+          font-weight: 500;
+          font-size: 18px;
+          line-height: 100%;
+          letter-spacing: -0.02em;
+          color: #182A42;
+
+          display: inline-block;
+          vertical-align: middle;
+          white-space: nowrap;
+        }
+
+        .cart-icon-img {
+          width: 26px;
+          height: 26px;
+          flex-shrink: 0;
+        }
+
+        &:hover {
+          background-color: #D6E9FA;
+        }
+
+        &:active {
+          transform: scale(0.98);
+        }
+      }
+    }
+  }
+}
