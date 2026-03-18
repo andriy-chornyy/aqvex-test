@@ -1,15 +1,7 @@
-<h1 align="center">💎 Womapp — task 💎</h1>
+<h1 align="center">💎 Aqvex — test 💎</h1>
 
-## 📄 About the project
-- Fully responsive layout for Desktop, Tablet, and Mobile (>320px)
-- React + TypeScript for scalable, typed components
-- SCSS with modular structure: variables, mixins
-- CSS Modules for component-scoped styles
-- Flexbox layout techniques
-- Smooth hover effects, image scaling, and transitions
-
-<h3><a href="https://andriy-chornyy.github.io/Womapp-test-task/" target="_blank">👉 DEMO</a></h3> 
-<h3><a href="https://www.figma.com/design/J2iyb9iYY63O9kqJkwBHNo/Test?node-id=1-535&t=vvrYXeVtYPOpge5K-0" target="_blank">🎨 Figma Design</a></h3>
+<h3><a href="https://andriy-chornyy.github.io/aqvex-test/" target="_blank">👉 DEMO</a></h3> 
+<h3><a href="https://www.figma.com/design/CMy9bnx2VGTVsj7uSBFf9Y/aptitude-test?node-id=43-3167&t=CSPzedns1FBiWHc4-0" target="_blank">🎨 Figma Design</a></h3>
 
 ## 🛠 Built With
 
